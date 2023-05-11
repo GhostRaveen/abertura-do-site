@@ -37,7 +37,7 @@
 		
 			0% {background-color: #fff;}
 			
-			100% {background-color: #000;}
+			100% {background-color: #2A2C6C;}
 			
 		}
 		
@@ -55,7 +55,7 @@
 
 			position: relative;
 
-			animation-duration: 10s;
+			animation-duration: 4s;
 
 			animation-delay: 2s;
 
@@ -81,60 +81,6 @@
 
 		}
 		
-		#div3, #div4 {
-
-			opacity: 100%;
-
-			width: 100vw;
-			
-			height: 50%;
-
-			background-color: rgb(48, 48, 48);
-
-			position: absolute;
-
-			animation-duration: 6s;
-
-			animation-delay: 150000000s;
-
-			display: inline-block;
-
-			overflow: hidden;
-
-			margin: auto;
-
-			left: 0;
-
-			right: 0;
-
-			animation-fill-mode: forwards;
-
-		}
-		
-		#div3 {
-
-			animation-name: cima;
-
-			top: 0;
-
-			bottom: 50%;
-
-			transform: translateY(-100%);
-
-		}
-		
-		#div4 {
-
-			animation-name: baixo;
-
-			top: 50%;
-
-			bottom: 0;
-
-			transform: translateY(100%);
-		  
-		}
-		
 		@keyframes esquerdo {
 
 			0% {background-color:#fff; opacity: 100%; right:0px; top:0px;}
@@ -148,22 +94,6 @@
 			0% {background-color:#fff; opacity: 100%; left:0px; top:0px;}
 
 			55% {background-color:#fff; left:50%; top:0px;}
-
-		}
-		
-		@keyframes cima {
-
-			0% {background-color:#fff; transform: translateY(0);}
-
-			55% {background-color:#fff; transform: translateY(-100%);}
-
-		}
-		
-		@keyframes baixo {
-
-			0% {background-color:#fff; transform: translateY(0);}
-
-			55% {background-color:#fff; transform: translateY(100%);}
 
 		}
 		
@@ -187,78 +117,70 @@
 			
 			clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 			
-		}	
-
-		#img1, #img2 {
-			
-			animation: aparecer 1s 1s forwards, disappear 5s forwards 2s;
-			
-			z-index: 1;
-			
 		}
-		
-		#img3, #img4 {
-			
-			animation: aparecer-branco 1s 2s forwards, disappear 20s forwards 10s;
-			
-			z-index: 1;
-			
-		}
-		
-		
 		
 		#img1 {
 		
-			background-image: url('img/raven-esquerda.png');
+			background-image: url('img/raven-black.png');
 			
-			background-position: left center;
+			background-position: center;
+			
+			animation: aparecer-black 1s 1s forwards, disappear 5s forwards 2s;
+			
+			z-index: 1;
 			
 		}
 		
 		#img2 {
 
-			background-image: url('img/raven-direita.png');
+			background-image: url('img/raven-white.png');
 			
-			background-position: right center;
+			background-position: center;
 			
-		}
-		
-		#img3 {
-		
-			background-image: url('img/raven-esquerda-branco.png');
+			animation: aparecer-white 1s 2s forwards, disappear 20s forwards 10s, corvo 8s 4s;
 			
-			background-position: left center;
+			z-index: 1;
 			
-			
+		}		
 
-		}
-		#img4 {
-
-			background-image: url('img/raven-direita-branco.png');
-			
-			background-position: right center;
-			
-		}
-		
-		
-
-		@keyframes aparecer {
+		@keyframes aparecer-black {
 		
 			to {opacity: 1;}
 			
 		}
 		
-		@keyframes aparecer-branco {
+		@keyframes aparecer-white {
 		
 			to {opacity: 1;}
 			
 		}
-		
-		
 		
 		@keyframes disappear {
 		
 			to {opacity: 0;}
+			
+		}
+		
+		@keyframes corvo {
+		
+			0% {width:13vh;}
+			
+			12.5%{width:12vh;}
+			
+			25%{width:13vh;}
+			
+			37.5% {width:12vh;}
+			
+			50%{width:13vh;}
+			
+			62.5%{width:12vh;}
+			
+			75%{width:13vh;}
+			
+			87.5%{width:12vh;}
+			
+			100%{width:13vh;}
+			
 			
 		}
 		
@@ -274,7 +196,7 @@
 
 			background-repeat: no-repeat;
 			background-position: center;
-			flex: 1; /* adicionado */
+			flex: 1;
 			height: 100
 		}
 		
@@ -289,21 +211,10 @@
 	
 	<div class="div" id="div2"></div>
 	
-	<div class="div" id="div3"></div>
-	
-	<div class="div" id="div4"></div>
-	
-	
 	<div class="container">
 		<div class="half-image image" id="img1"></div>
 		<div class="half-image image" id="img2"></div>
 	</div>
-
-	
-	<div class="container">
-		<div class="half-image image" id="img3"></div>
-		<div class="half-image image" id="img4"></div>
-	</div>	
 	
 	<script>
 	  function redirect() {
